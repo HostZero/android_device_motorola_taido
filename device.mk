@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/meta_init.rc:recovery/root/meta_init.rc \
     $(LOCAL_PATH)/rootdir/meta_init.modem.rc:recovery/root/meta_init.modem.rc \
     $(LOCAL_PATH)/rootdir/meta_init.project.rc:recovery/root/meta_init.project.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.mt6735.rcrecovery/root/ueventd.mt6735.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.mt6735.rc:recovery/root/ueventd.mt6735.rc \
 
 # System Properties
 #PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
