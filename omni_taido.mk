@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/motorola/taido/full_porridge.mk)
+$(call inherit-product, device/motorola/taido/full_taido.mk)
 
 $(call inherit-product, vendor/omni/config/common.mk)
 
