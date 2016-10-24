@@ -1,2 +1,0 @@
-# MTK Logger Configuration
-etc/mtklog-config.prop

@@ -1,3 +1,3 @@
-add_lunch_combo cm_porridge-user
-add_lunch_combo cm_porridge-userdebug
-add_lunch_combo cm_porridge-eng
+add_lunch_combo omni_taido-user
+add_lunch_combo omni_taido-userdebug
+add_lunch_combo omni_taido-eng
