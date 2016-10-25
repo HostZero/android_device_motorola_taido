@@ -58,6 +58,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET = 0x04000000
 BOARD_TAGS_OFFSET = 0x0e000000
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET) --board XT1706_S131_160
+TARGET_MKIMAGE := $(DEVICE_PATH)/mkbootimg
 BOARD_CUSTOM_BOOTIMG_MK := device/motorola/taido/mkbootimg.mk
 
 MTK_INTERNAL_CDEFS := $(foreach t,$(AUTO_ADD_GLOBAL_DEFINE_BY_NAME),$(if $(filter-out no NO none NONE false FALSE,$($(t))),-D$(t)))

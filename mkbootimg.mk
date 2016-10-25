@@ -17,6 +17,8 @@
 LOCAL_PATH := $(call my-dir)
 
 RAMDISK := $(PRODUCT_OUT)/ramdisk.img
+RECOVERY_RAMDISK := $(PRODUCT_OUT)/ramdisk-recovery.img
+RECOVERY_ARGS := --cmdline bootopt=64S3,32N2,32N2  --base 0x40000000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000 --board XT1706_S131_160 --pagesize 2048
 
 $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES)
 	$(call pretty,"Target boot image: $@")
@@ -24,11 +26,11 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES)
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE),raw)
 	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
 
+### Recovery
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
-		$(RAMDISK) \
+		$(RECOVERY_RAMDISK) \
 		$(recovery_kernel)
-	@echo -e ${CL_CYN}"----- Making recovery image ------"${CL_RST}
-	@echo -e ${CL_CYN}"----- Using Motorola Config to Make Recovery ------"${CL_RST}
-	$(hide) $(MKBOOTIMG) --kernel $(OUT)/kernel --ramdisk $(OUT)/ramdisk-recovery.img --cmdline bootopt=64S3,32N2,32N2  --base 0x40000000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000 --board XT1706_S131_160 --pagesize 2048 --output $(OUT)/recovery.img
-	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE),raw)
+	$(call pretty,"Target recovery image: $@")
+	$(hide) $(MKBOOTIMG) $(INTERNAL_RECOVERYIMAGE_ARGS) $(RECOVERY_ARGS) --output $@ --ramdisk $(RECOVERY_RAMDISK)
+	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE))
 	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
