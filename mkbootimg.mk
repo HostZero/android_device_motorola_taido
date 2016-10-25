@@ -17,6 +17,7 @@
 LOCAL_PATH := $(call my-dir)
 
 RAMDISK := $(PRODUCT_OUT)/ramdisk.img
+MAKEBOOTIMG := $(OUT)/mkbootimg
 RECOVERY_RAMDISK := $(PRODUCT_OUT)/ramdisk-recovery.img
 RECOVERY_ARGS := --cmdline bootopt=64S3,32N2,32N2  --base 0x40000000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000 --board XT1706_S131_160 --pagesize 2048
 
@@ -27,7 +28,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES)
 	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
 
 ### Recovery
-$(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
+$(INSTALLED_RECOVERYIMAGE_TARGET): $(MAKEBOOTIMG) \
 		$(RECOVERY_RAMDISK) \
 		$(recovery_kernel)
 	$(call pretty,"Target recovery image: $@")

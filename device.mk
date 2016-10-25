@@ -16,6 +16,10 @@
 MTK_PROJECT_CONFIG ?= device/motorola/taido/ProjectConfig.mk
 include $(MTK_PROJECT_CONFIG)
 
+# MKIMAGE
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/mkbootimg:mkbootimg
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.mt6735:recovery/root/fstab.mt6735 \
