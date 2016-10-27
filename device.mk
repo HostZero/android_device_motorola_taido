@@ -22,6 +22,7 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/enableswap.sh:recovery/root/enableswap.sh \
     $(LOCAL_PATH)/rootdir/fstab.mt6735:recovery/root/fstab.mt6735 \
     $(LOCAL_PATH)/rootdir/factory_init.rc:recovery/root/factory_init.rc \
     $(LOCAL_PATH)/rootdir/factory_init.usb.rc:recovery/root/factory_init.usb.rc \
@@ -29,7 +30,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/meta_init.rc:recovery/root/meta_init.rc \
     $(LOCAL_PATH)/rootdir/meta_init.modem.rc:recovery/root/meta_init.modem.rc \
     $(LOCAL_PATH)/rootdir/meta_init.project.rc:recovery/root/meta_init.project.rc \
+    $(LOCAL_PATH)/rootdir/init.recovery.mt6735.rc:recovery/root/meta_init.project.rc \
     $(LOCAL_PATH)/rootdir/ueventd.mt6735.rc:recovery/root/ueventd.mt6735.rc \
+    $(LOCAL_PATH)/rootdir/verity_key:recovery/root/verity_key \
 
 # System Properties
 #PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
