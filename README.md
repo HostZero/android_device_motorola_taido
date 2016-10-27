@@ -19,4 +19,4 @@ Camera  | 8 MP/5 MP, autofocus, LED flash
 
 Copyright 2016 - The CyanogenMod Project.
 
-![Moto E3 Power](http://cdn2.gsmarena.com/vv/pics/motorola/motorola-moto-e3-1.jpg "Moto E3 Power")
+![Moto E3 Power](https://camo.githubusercontent.com/76af2853707b370bbea2ded7d0c0dc13122061a1/687474703a2f2f63646e322e67736d6172656e612e636f6d2f76762f706963732f6d6f746f726f6c612f6d6f746f726f6c612d6d6f746f2d65332d312e6a7067 "Moto E3 Power")
